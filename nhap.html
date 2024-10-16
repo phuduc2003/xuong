@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân và lịch sử mua hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Thanh nav */
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        /* Nội dung */
+        .content {
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Thanh điều hướng -->
+    <nav>
+        <a href="#" id="personalInfoMenu">Thông tin cá nhân</a>
+        <a href="#" id="orderHistoryMenu">Lịch sử mua hàng</a>
+    </nav>
+
+    <!-- Nội dung chính -->
+    <div class="content">
+        <!-- Thông tin cá nhân -->
+        <div id="personalInfo" class="section">
+            <h2>Thông tin cá nhân</h2>
+            <p>Tên: Nguyễn Văn A</p>
+            <p>Email: nguyenvana@example.com</p>
+            <p>Số điện thoại: 0123456789</p>
+        </div>
+
+        <!-- Lịch sử mua hàng -->
+        <div id="orderHistory" class="section hidden">
+            <h2>Lịch sử mua hàng</h2>
+            <ul>
+                <li>Đơn hàng #1 - Ngày mua: 01/01/2023</li>
+                <li>Đơn hàng #2 - Ngày mua: 15/02/2023</li>
+                <li>Đơn hàng #3 - Ngày mua: 23/03/2023</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Xử lý chuyển đổi giữa các menu
+        const personalInfoMenu = document.getElementById('personalInfoMenu');
+        const orderHistoryMenu = document.getElementById('orderHistoryMenu');
+        const personalInfoSection = document.getElementById('personalInfo');
+        const orderHistorySection = document.getElementById('orderHistory');
+
+        personalInfoMenu.addEventListener('click', function() {
+            personalInfoSection.classList.remove('hidden');
+            orderHistorySection.classList.add('hidden');
+        });
+
+        orderHistoryMenu.addEventListener('click', function() {
+            orderHistorySection.classList.remove('hidden');
+            personalInfoSection.classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>
